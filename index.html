@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:site_name" content="View Eklabya Roy's Portfolio Website">
+    <meta property="og:title" content="Developer | Tech Enthusiast" />
+    <meta property="og:description"
+        content="Hello there 👋🏻,<br><br>My name is <span class='bold'><a class='alink'>Eklabya Roy</a>.</span><br><br>I am a Computer Engineering student at <span class='bold'>Jadavpur University 👨🏻‍💻📚</span><br><br>I am Enthusiast about the new tech and solving real world problems.<br><br>Send <span class='bold'>'help'</span> to know more about me.<br>" />
+    <meta property="og:image" itemprop="image" >
+    <meta property="og:type" content="website" />
+
+    <link itemprop="thumbnailUrl">
+    <!-- No need to change anything here -->
+    <meta property="og:type" content="website" />
+    <meta property="og:image:type" content="image/jpeg">
+
+    <!-- Size of image. Any size up to 300. Anything above 300px will not work in WhatsApp -->
+    <meta property="og:image:width" content="300">
+    <meta property="og:image:height" content="300">
+    <meta property="og:updated_time" content="1440432930" />
+
+    <title>Developer | Tech Enthusiast | </title>
+    <script>
+        function updateLastSeenTime() {
+            var currentTime = new Date();
+            var hours = currentTime.getHours();
+            var minutes = currentTime.getMinutes();
+            var ampm = hours >= 12 ? "pm" : "am";
+    
+            // Convert hours to 12-hour format
+            hours = hours % 12;
+            hours = hours ? hours : 12; // 0 should be treated as 12
+    
+            var timeString = hours + ":" + (minutes < 10 ? "0" : "") + minutes + " " + ampm;
+            document.getElementById("lastseen-time").textContent = timeString;
+        }
+    
+        // Update the last seen time immediately and then every minute (60000 milliseconds)
+        updateLastSeenTime();
+        setInterval(updateLastSeenTime, 60000);
+    </script>
+    
+</head>
+
+<body onload="startFunction()">
+
+    <!-- <link itemprop="thumbnailUrl" href="https://vinayak-portfolio-09.herokuapp.com/images/dp.jpg">
+    <span itemprop="thumbnail" itemscope itemtype="http://schema.org/ImageObject">
+        <link itemprop="url" href="https://vinayak-portfolio-09.herokuapp.com/images/dp.jpg">
+    </span> -->
+
+    <nav>
+
+        <div class="navbar">
+            <img class="dpimg" onclick="openFullScreenDP()" src="images/Eklabya_Roy_Passport.png" alt="">
+            <div class="personalInfo">
+                <label id="name">Eklabya Roy</label>
+                <label id="lastseen">last seen today at 1:23 am</label>:
+            </div>
+        </div>
+
+    </nav>
+
+
+    <div class="scrollable" id="myScrollable">
+
+        <div class="fullScreenDP" id="fullScreenDP">
+            <div class="insideDP">
+                <img class="dp" src="images/Eklabya_Roy_Passport.png" alt="">
+                <svg class="closeBTN" onclick="closeFullDP()" xmlns="http://www.w3.org/2000/svg" width="64px"
+                    viewBox="0 0 512 512" height="64px">
+                    <path class="btnColor" fill="#E04F5F"
+                        d="M504.1,256C504.1,119,393,7.9,256,7.9C119,7.9,7.9,119,7.9,256C7.9,393,119,504.1,256,504.1C393,504.1,504.1,393,504.1,256z" />
+                    <path fill="#FFF"
+                        d="M285,256l72.5-84.2c7.9-9.2,6.9-23-2.3-31c-9.2-7.9-23-6.9-30.9,2.3L256,222.4l-68.2-79.2c-7.9-9.2-21.8-10.2-31-2.3c-9.2,7.9-10.2,21.8-2.3,31L227,256l-72.5,84.2c-7.9,9.2-6.9,23,2.3,31c4.1,3.6,9.2,5.3,14.3,5.3c6.2,0,12.3-2.6,16.6-7.6l68.2-79.2l68.2,79.2c4.3,5,10.5,7.6,16.6,7.6c5.1,0,10.2-1.7,14.3-5.3c9.2-7.9,10.2-21.8,2.3-31L285,256z" />
+                </svg>
+            </div>
+        </div>
+
+        <div id="chatting" class="chatting">
+            <ul id="listUL">
+            </ul>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="sendBar">
+            <input id="inputMSG" onkeypress="isEnter(event)" type="text" placeholder="Type a message" autofocus>
+            <svg onclick="sendMsg()" viewBox="0 0 24 24" width="24" height="24" class="">
+                <path fill="currentColor"
+                    d="M1.101 21.757 23.8 12.028 1.101 2.3l.011 7.912 13.623 1.816-13.623 1.817-.011 7.912z"></path>
+            </svg>
+        </div>
+    </footer>
+
+</body>
+
+</html>
